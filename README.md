@@ -1,1 +1,0 @@
-# manuelcolegio19.github.io
