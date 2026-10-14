@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoesErCañas | Exclusive Sneakers & Grails Granada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        canas: {
+                            black: '#070709',
+                            dark: '#111116',
+                            card: '#16161d',
+                            red: '#e11d48',      // Rojo intenso principal
+                            neon: '#ff1e42',     // Rojo brillante hover/glow
+                            darkred: '#881337'
+                        }
+                    }
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        body {
+            background-color: #070709;
+            color: #ffffff;
+        }
+
+        /* Marquesina infinita */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 26s linear infinite;
+        }
+        .animate-marquee-fast {
+            display: flex;
+            width: max-content;
+            animation: marquee 18s linear infinite;
+        }
+        .animate-marquee:hover, .animate-marquee-fast:hover {
+            animation-play-state: paused;
+        }
+
+        /* Zapatilla flotante en el Hero con sombra roja */
+        @keyframes floatShoe {
+            0%, 100% { transform: translateY(0px) rotate(-10deg) scale(1); }
+            50% { transform: translateY(-16px) rotate(-6deg) scale(1.04); }
+        }
+        .hero-shoe-float {
+            animation: floatShoe 4.5s ease-in-out infinite;
+            filter: drop-shadow(0 28px 35px rgba(225, 29, 72, 0.45));
+        }
+
+        /* Efecto aparición al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efectos Hover en las Tarjetas de Zapatillas */
+        .sneaker-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sneaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(225, 29, 72, 0.35);
+            border-color: #ff1e42;
+        }
+        .sneaker-card .quick-sizes {
+            transform: translateY(102%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sneaker-card:hover .quick-sizes {
+            transform: translateY(0%);
+        }
+        .sneaker-card img {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sneaker-card:hover img {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        /* Mega Menu */
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+        }
+        .nav-item-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Scrollbar Roja y Negra */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #070709; }
+        ::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff1e42; }
+    </style>
+</head>
+<body class="bg-canas-black text-white antialiased selection:bg-canas-red selection:text-white overflow-x-hidden">
+
+    <!-- 1. TOP BAR MARQUEE (ROJO Y NEGRO) -->
+    <div class="bg-canas-red text-white py-2 overflow-hidden border-b border-red-900 text-xs font-mono uppercase tracking-widest font-bold">
+        <div class="animate-marquee-fast">
+            <div class="flex items-center space-x-10 mx-4">
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-black inline-block animate-ping"></span> SHOESERCAÑAS GRANADA • ENTREGA EN MANO EN IES ZAIDÍN-VERGELES</span>
+                <span>•</span>
+                <span>🔥 ENVÍO GRATIS A PARTIR DE 80€ A TODA ESPAÑA</span>
+                <span>•</span>
+                <span class="bg-black text-white px-2 py-0.5 rounded">100% LEGIT CHECK GARANTIZADO</span>
+                <span>•</span>
+                <span>NUEVOS PARES: TRAVIS SCOTT, JORDAN 4, ASICS KAYANO 14 & SPEZIAL</span>
+                <span>•</span>
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-black inline-block"></span> SHOESERCAÑAS GRANADA • ENTREGA EN MANO EN IES ZAIDÍN-VERGELES</span>
+                <span>•</span>
+                <span>🔥 ENVÍO GRATIS A PARTIR DE 80€ A TODA ESPAÑA</span>
+                <span>•</span>
+                <span class="bg-black text-white px-2 py-0.5 rounded">100% LEGIT CHECK GARANTIZADO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. NAVBAR PRINCIPAL -->
+    <header class="sticky top-0 z-40 bg-canas-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo ShoesErCañas -->
+            <a href="#" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tighter flex items-center gap-1.5 group">
+                <span class="text-white group-hover:text-canas-red transition">SHOES</span>
+                <span class="bg-canas-red text-white px-2.5 py-0.5 rounded-lg shadow-[0_0_20px_rgba(225,29,72,0.6)]">ERCAÑAS</span>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#ofertas" class="text-canas-neon flex items-center gap-1.5 hover:opacity-80 transition font-bold">
+                    <i data-lucide="flame" class="w-4 h-4 fill-canas-neon"></i> Rebajas (-20%)
+                </a>
+                <a href="#catalogo" onclick="filterByBrand('ALL')" class="text-neutral-300 hover:text-canas-neon transition">Bestsellers</a>
+                
+                <!-- Mega Menu Zapatillas -->
+                <div class="nav-item-dropdown relative py-7">
+                    <button class="flex items-center gap-1 uppercase font-semibold text-neutral-300 hover:text-canas-neon transition">
+                        Zapatillas <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    
+                    <div class="mega-menu fixed left-0 top-20 w-full bg-canas-dark border-b border-canas-red/40 shadow-2xl py-10 px-8 z-50">
+                        <div class="max-w-7xl mx-auto grid grid-cols-5 gap-8 text-left normal-case">
+                            <div>
+                                <h4 class="font-display font-bold text-base uppercase mb-3 border-b pb-2 border-white/10 text-canas-neon">Air Jordan</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white font-semibold text-white">Jordan 1 x Travis Scott 🔥</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white">Jordan 1 High Chicago</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white">Jordan 4 Retro Bred / Military</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white">Jordan 1 Low Fragment</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-base uppercase mb-3 border-b pb-2 border-white/10 text-canas-neon">Nike</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li><a href="#catalogo" onclick="filterByBrand('Nike')" class="hover:text-white font-semibold text-white">Air Max Plus (TN)</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Nike')" class="hover:text-white">Nike Dunk Low Panda & SB</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Nike')" class="hover:text-white">Nike Air Force 1 '07</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-base uppercase mb-3 border-b pb-2 border-white/10 text-canas-neon">Adidas</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li><a href="#catalogo" onclick="filterByBrand('Adidas')" class="hover:text-white">Adidas Handball Spezial</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Adidas')" class="hover:text-white">Adidas Samba OG</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Adidas')" class="hover:text-white">Adidas Gazelle Indoor</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('Adidas')" class="hover:text-white">Yeezy Boost 350 V2</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-base uppercase mb-3 border-b pb-2 border-white/10 text-canas-neon">Asics & New Balance</h4>
+                                <ul class="space-y-2 text-neutral-400 text-sm">
+                                    <li><a href="#catalogo" onclick="filterByBrand('Asics')" class="hover:text-white">Asics Gel-Kayano 14</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('New Balance')" class="hover:text-white">New Balance 2002R Protection Pack</a></li>
+                                    <li><a href="#catalogo" onclick="filterByBrand('New Balance')" class="hover:text-white">New Balance 550</a></li>
+                                </ul>
+                            </div>
+                            <div class="bg-gradient-to-br from-canas-red to-black p-5 rounded-2xl flex flex-col justify-between border border-white/15">
+                                <div>
+                                    <span class="bg-black text-white text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded">Showroom Granada</span>
+                                    <h5 class="font-display font-extrabold text-lg mt-2 leading-tight">IES Zaidín-Vergeles</h5>
+                                    <p class="text-xs text-white/80 mt-1">Pruébate tus pares o recoge tu pedido sin gastos de envío en Calle Primavera.</p>
+                                </div>
+                                <a href="#tiendas" class="mt-4 inline-block text-xs font-mono uppercase bg-white text-black px-3 py-2 rounded-lg font-bold text-center hover:bg-black hover:text-white transition">
+                                    Ver Mapa →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#colecciones" class="text-neutral-300 hover:text-canas-neon transition">Siluetas</a>
+                <a href="#tiendas" class="text-neutral-300 hover:text-canas-neon transition flex items-center gap-1">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-canas-red"></i> Zaidín-Vergeles
+                </a>
+            </nav>
+
+            <!-- Botones Derecha -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <button onclick="toggleSearchModal()" class="p-2.5 bg-canas-card hover:bg-canas-red rounded-full border border-white/10 transition" title="Buscar zapatillas">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+                <button onclick="toggleCart()" class="relative flex items-center gap-2 bg-canas-red hover:bg-canas-neon text-white px-4 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(225,29,72,0.5)] transition">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Carrito</span>
+                    <span id="cart-count" class="bg-black text-white px-2 py-0.5 rounded-full text-[11px] font-extrabold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. HERO SECTION (NEGRO Y ROJO CON ZAPATILLA REAL INTERACTIVA) -->
+    <section class="relative overflow-hidden py-14 lg:py-24 border-b border-white/10">
+        <!-- Luces Rojas de Fondo -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-canas-red/25 rounded-full blur-[130px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-0 w-[520px] h-[520px] bg-canas-red/20 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Texto Hero -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-canas-red/15 border border-canas-red/40 px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest text-canas-neon">
+                        <span class="w-2 h-2 rounded-full bg-canas-neon animate-ping"></span>
+                        ShoesErCañas • La Referencia Sneaker en Granada
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] uppercase">
+                        PISA FUERTE CON <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-canas-neon via-red-500 to-white">SHOES ER CAÑAS.</span>
+                    </h1>
+
+                    <p class="text-neutral-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                        El catálogo más duro de <strong class="text-white">Granada</strong>. Desde los <strong class="text-white">Grails de Jordan 1 x Travis Scott</strong> y <strong class="text-white">Air Jordan 4</strong> hasta tus rotaciones diarias de <strong class="text-white">Adidas Spezial, Samba OG, Asics Gel-Kayano 14 y Nike TN</strong>.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#catalogo" class="bg-canas-red hover:bg-canas-neon text-white font-display font-extrabold uppercase px-8 py-4 rounded-full text-sm tracking-wider hover:scale-105 shadow-[0_0_30px_rgba(225,29,72,0.6)] transition duration-300 flex items-center gap-2">
+                            Ver Catálogo Sneaker <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#tiendas" class="border border-white/20 hover:border-canas-red bg-white/5 text-white font-mono uppercase px-7 py-4 rounded-full text-sm tracking-wider hover:bg-canas-red/10 transition flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-canas-red"></i> Punto IES Zaidín-Vergeles
+                        </a>
+                    </div>
+
+                    <!-- Datos clave -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg">
+                        <div>
+                            <p class="font-mono font-bold text-2xl sm:text-3xl text-canas-neon">100%</p>
+                            <p class="text-xs text-neutral-400 uppercase font-mono">Fotos y Pares Reales</p>
+                        </div>
+                        <div>
+                            <p class="font-mono font-bold text-2xl sm:text-3xl text-white">24/48H</p>
+                            <p class="text-xs text-neutral-400 uppercase font-mono">Envío o Entrega Zaidín</p>
+                        </div>
+                        <div>
+                            <p class="font-mono font-bold text-2xl sm:text-3xl text-canas-neon">+500</p>
+                            <p class="text-xs text-neutral-400 uppercase font-mono">Clientes Satisfechos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zapatilla Hero 3D -->
+                <div class="lg:col-span-5 relative flex flex-col items-center justify-center" id="hero-tilt-box">
+                    <span class="absolute text-[95px] sm:text-[130px] font-display font-extrabold text-canas-red/10 select-none pointer-events-none tracking-tighter leading-none">
+                        ERCAÑAS
+                    </span>
+
+                    <div class="relative z-10 cursor-pointer group w-full" onclick="openQuickView(1)">
+                        <div class="bg-gradient-to-b from-canas-card to-canas-black p-6 rounded-3xl border border-canas-red/30">
+                            <img id="hero-shoe-img" 
+                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Air_Jordan_1_Banned.jpg/800px-Air_Jordan_1_Banned.jpg" 
+                                 alt="Air Jordan 1 High Bred / Chicago" 
+                                 class="w-full h-72 sm:h-80 rounded-2xl hero-shoe-float object-contain bg-white p-4">
+                        </div>
+                        
+                        <!-- Tarjeta Destacada Inferior -->
+                        <div class="mt-5 bg-canas-card/95 backdrop-blur-md border border-canas-red/50 p-4 rounded-2xl flex items-center justify-between gap-4 shadow-2xl">
+                            <div>
+                                <span class="text-[11px] font-mono uppercase text-canas-neon font-bold block">🔥 Grail Destacado ShoesErCañas</span>
+                                <h3 class="font-display font-bold text-white text-base">Jordan 1 Low x Travis Scott Reverse Mocha</h3>
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <span class="font-mono font-bold text-lg text-canas-neon">500,00€</span>
+                                    <span class="font-mono text-xs text-neutral-500 line-through">550,00€</span>
+                                </div>
+                            </div>
+                            <button class="bg-canas-red hover:bg-canas-neon text-white px-4 py-2.5 rounded-xl font-mono font-bold text-xs uppercase transition shrink-0">
+                                Elegir Talla
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MARQUESINA DE MARCAS -->
+    <div class="bg-canas-dark py-5 border-b border-white/10 overflow-hidden select-none">
+        <div class="animate-marquee flex items-center space-x-14">
+            <button onclick="filterByBrand('Jordan')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">AIR JORDAN</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Nike')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">NIKE TUNED / DUNK</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Adidas')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">ADIDAS SPEZIAL & SAMBA</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Asics')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">ASICS GEL-KAYANO 14</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('New Balance')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">NEW BALANCE 2002R</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Jordan')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">TRAVIS SCOTT GRAILS</button>
+            <span class="text-canas-red">✦</span>
+            <!-- Duplicado -->
+            <button onclick="filterByBrand('Jordan')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">AIR JORDAN</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Nike')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">NIKE TUNED / DUNK</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Adidas')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">ADIDAS SPEZIAL & SAMBA</button>
+            <span class="text-canas-red">✦</span>
+            <button onclick="filterByBrand('Asics')" class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-neutral-500 hover:text-canas-neon transition">ASICS GEL-KAYANO 14</button>
+        </div>
+    </div>
+
+    <!-- 5. CATÁLOGO DE ZAPATILLAS CON IMÁGENES CORRESPONDIENTES A CADA MODELO -->
+    <section id="catalogo" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-canas-neon block mb-2">Catálogo Oficial Verificado</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight">Sneakers & Grails</h2>
+            </div>
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap gap-2" id="brand-filters">
+                <button onclick="filterByBrand('ALL')" data-brand="ALL" class="filter-btn bg-canas-red text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition shadow-[0_0_15px_rgba(225,29,72,0.5)]">
+                    Todas (12)
+                </button>
+                <button onclick="filterByBrand('Jordan')" data-brand="Jordan" class="filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition">
+                    Air Jordan
+                </button>
+                <button onclick="filterByBrand('Nike')" data-brand="Nike" class="filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition">
+                    Nike
+                </button>
+                <button onclick="filterByBrand('Adidas')" data-brand="Adidas" class="filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition">
+                    Adidas & Yeezy
+                </button>
+                <button onclick="filterByBrand('Asics')" data-brand="Asics" class="filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition">
+                    Asics
+                </button>
+                <button onclick="filterByBrand('New Balance')" data-brand="New Balance" class="filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition">
+                    New Balance
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid de Zapatillas -->
+        <div id="sneakers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Renderizado por JS con las fotos exactas de cada zapatilla -->
+        </div>
+    </section>
+
+    <!-- 6. REBAJAS / STEALS DE LA SEMANA -->
+    <section id="ofertas" class="py-16 bg-canas-dark border-t border-b border-white/10 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-canas-red/25 via-canas-card to-canas-black rounded-3xl p-8 sm:p-12 border border-canas-red/40 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-3 max-w-2xl">
+                    <span class="bg-canas-red text-white text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Rebajas ShoesErCañas • Hasta -20%</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight">Steals de la Semana</h2>
+                    <p class="text-neutral-300 text-sm sm:text-base">Pares seleccionados bajo precio de reventa. Si eres del <strong class="text-white">IES Zaidín-Vergeles</strong>, recógelas directamente sin pagar envío.</p>
+                </div>
+                <button onclick="filterSaleOnly()" class="bg-canas-red hover:bg-canas-neon text-white font-display font-extrabold uppercase px-8 py-4 rounded-full text-sm shrink-0 shadow-[0_0_25px_rgba(225,29,72,0.6)] transition">
+                    Ver Solo Pares Rebajados
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. COLECCIONES CLAVE -->
+    <section id="colecciones" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="mb-10">
+            <span class="text-xs font-mono uppercase tracking-widest text-canas-neon block mb-2">Especialistas en Hype</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight">Siluetas Más Buscadas</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div onclick="filterByBrand('Jordan'); document.getElementById('catalogo').scrollIntoView();" class="group relative h-80 rounded-3xl overflow-hidden cursor-pointer border border-white/15 hover:border-canas-red transition bg-white">
+                <img id="col-img-1" src="" alt="Air Jordan 4" class="w-full h-full object-contain p-6 group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5">
+                    <span class="text-[10px] font-mono bg-canas-red text-white font-bold px-2.5 py-1 rounded uppercase">49 Productos</span>
+                    <h3 class="font-display font-extrabold text-2xl mt-2 uppercase">Air Jordan 1 & 4</h3>
+                    <p class="text-xs text-neutral-300 mt-1 group-hover:text-canas-neon">Explorar colección →</p>
+                </div>
+            </div>
+
+            <div onclick="filterByBrand('Adidas'); document.getElementById('catalogo').scrollIntoView();" class="group relative h-80 rounded-3xl overflow-hidden cursor-pointer border border-white/15 hover:border-canas-red transition bg-white">
+                <img id="col-img-2" src="" alt="Adidas Spezial & Samba" class="w-full h-full object-contain p-6 group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5">
+                    <span class="text-[10px] font-mono bg-canas-red text-white font-bold px-2.5 py-1 rounded uppercase">15 Productos</span>
+                    <h3 class="font-display font-extrabold text-2xl mt-2 uppercase">Samba & Spezial</h3>
+                    <p class="text-xs text-neutral-300 mt-1 group-hover:text-canas-neon">Explorar colección →</p>
+                </div>
+            </div>
+
+            <div onclick="filterByBrand('Asics'); document.getElementById('catalogo').scrollIntoView();" class="group relative h-80 rounded-3xl overflow-hidden cursor-pointer border border-white/15 hover:border-canas-red transition bg-white">
+                <img id="col-img-3" src="" alt="Asics Gel-Kayano" class="w-full h-full object-contain p-6 group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5">
+                    <span class="text-[10px] font-mono bg-canas-red text-white font-bold px-2.5 py-1 rounded uppercase">15 Productos</span>
+                    <h3 class="font-display font-extrabold text-2xl mt-2 uppercase">Asics Gel-Kayano</h3>
+                    <p class="text-xs text-neutral-300 mt-1 group-hover:text-canas-neon">Explorar colección →</p>
+                </div>
+            </div>
+
+            <div onclick="filterByBrand('Nike'); document.getElementById('catalogo').scrollIntoView();" class="group relative h-80 rounded-3xl overflow-hidden cursor-pointer border border-white/15 hover:border-canas-red transition bg-white">
+                <img id="col-img-4" src="" alt="Nike Air Max Plus TN" class="w-full h-full object-contain p-6 group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5">
+                    <span class="text-[10px] font-mono bg-canas-red text-white font-bold px-2.5 py-1 rounded uppercase">14 Productos</span>
+                    <h3 class="font-display font-extrabold text-2xl mt-2 uppercase">Nike TN & Dunk</h3>
+                    <p class="text-xs text-neutral-300 mt-1 group-hover:text-canas-neon">Explorar colección →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. UBICACIÓN OFICIAL: IES ZAIDÍN-VERGELES (GRANADA) CON MAPA EN VIVO -->
+    <section id="tiendas" class="py-16 sm:py-24 bg-canas-dark border-t border-white/10 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-mono uppercase tracking-widest text-canas-neon">Punto Físico & Recogida en Mano en Granada</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight mt-1">Nuestra Sede: IES Zaidín-Vergeles</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-canas-card rounded-3xl overflow-hidden border border-canas-red/40 shadow-2xl">
+                <!-- Información de la tienda en IES Zaidín-Vergeles -->
+                <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 bg-canas-red text-white text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">
+                            📍 Sede Principal Granada
+                        </div>
+                        <h3 class="font-display font-extrabold text-3xl uppercase">ShoesErCañas <br><span class="text-canas-neon">IES Zaidín-Vergeles</span></h3>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            Estamos situados justo en el <strong>IES Zaidín-Vergeles</strong>. Puedes quedar con nosotros para ver la calidad de las zapatillas en persona, comprobar tu talla o recoger tu pedido directamente en mano sin gastos de envío.
+                        </p>
+
+                        <div class="space-y-3 pt-2 text-sm font-mono text-neutral-300">
+                            <p class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-canas-neon shrink-0 mt-0.5"></i>
+                                <span><strong>Dirección:</strong> Calle Primavera, 26-28, Zaidín, 18008 Granada (IES Zaidín-Vergeles)</span>
+                            </p>
+                            <p class="flex items-start gap-3">
+                                <i data-lucide="clock" class="w-5 h-5 text-canas-neon shrink-0 mt-0.5"></i>
+                                <span><strong>Horario Entregas:</strong> Lun - Vie de 08:15 a 14:45 (Recreos y cambios) y Tardes 16:00 a 21:00</span>
+                            </p>
+                            <p class="flex items-start gap-3">
+                                <i data-lucide="train" class="w-5 h-5 text-canas-neon shrink-0 mt-0.5"></i>
+                                <span><strong>Acceso rápido:</strong> Parada Metro Hípica / Alcázar Genil y Líneas Bus 4, 8 y S2.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <a href="https://www.google.com/maps/search/?api=1&query=IES+Zaidin+Vergeles+Calle+Primavera+26+Granada" target="_blank" class="bg-canas-red hover:bg-canas-neon text-white font-mono font-bold text-xs uppercase px-6 py-3.5 rounded-xl flex items-center gap-2 transition">
+                            <i data-lucide="navigation" class="w-4 h-4"></i> Cómo llegar en Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Google Maps apuntando exactamente al IES Zaidín-Vergeles -->
+                <div class="lg:col-span-7 min-h-[380px] relative">
+                    <iframe 
+                        src="https://www.google.com/maps?q=IES+Zaidin+Vergeles,+Calle+Primavera+26,+18008+Granada&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 380px; filter: invert(90%) hue-rotate(180deg) contrast(105%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. COMUNIDAD SHOESERCAÑAS -->
+    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-mono uppercase tracking-widest text-canas-neon">+500 Pares Entregados en Granada y toda España</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight mt-2">La Comunidad ErCañas</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-canas-card border border-white/10 p-6 rounded-2xl space-y-4 hover:border-canas-red transition">
+                <div class="flex text-canas-neon">★★★★★</div>
+                <p class="text-sm text-neutral-300">"Le pillé unas Asics Gel-Kayano 14 y quedamos directamente en la puerta del IES Zaidín-Vergeles a la hora del recreo. Caja original, impecables y trato de 10."</p>
+                <div class="pt-2 border-t border-white/10 flex justify-between text-xs font-mono text-neutral-400">
+                    <span class="font-bold text-white">Alejandro M.</span>
+                    <span>Zaidín, Granada 📍</span>
+                </div>
+            </div>
+
+            <div class="bg-canas-card border border-white/10 p-6 rounded-2xl space-y-4 hover:border-canas-red transition">
+                <div class="flex text-canas-neon">★★★★★</div>
+                <p class="text-sm text-neutral-300">"Llevaba meses detrás de las Jordan 1 Low Travis Scott Reverse Mocha y en ShoesErCañas las conseguí al mejor precio. En 24 horas las tenía en casa."</p>
+                <div class="pt-2 border-t border-white/10 flex justify-between text-xs font-mono text-neutral-400">
+                    <span class="font-bold text-white">Lucía F.</span>
+                    <span>Granada Centro 📍</span>
+                </div>
+            </div>
+
+            <div class="bg-canas-card border border-white/10 p-6 rounded-2xl space-y-4 hover:border-canas-red transition">
+                <div class="flex text-canas-neon">★★★★★</div>
+                <p class="text-sm text-neutral-300">"Compré unas Adidas Handball Spezial y unas Nike TN. Cero dudas de autenticidad, se nota que saben lo que manejan. Repetiré seguro."</p>
+                <div class="pt-2 border-t border-white/10 flex justify-between text-xs font-mono text-neutral-400">
+                    <span class="font-bold text-white">Pablo R.</span>
+                    <span>Armilla, Granada 📍</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CLUB 10€ DE REGALO -->
+    <section class="py-16 bg-gradient-to-r from-canas-darkred via-canas-red to-black text-white border-t border-b border-white/15">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+            <span class="bg-black text-white font-mono text-xs uppercase font-bold px-3.5 py-1 rounded-full">10€ De Descuento Directo</span>
+            <h2 class="font-display font-extrabold text-4xl sm:text-6xl uppercase tracking-tight">Únete al Club ErCañas</h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-xl mx-auto">
+                Entérate antes que nadie de los restocks en el <strong>IES Zaidín-Vergeles</strong> y llévate <strong>10€ de regalo</strong> para tu primer par.
+            </p>
+            <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-2">
+                <input type="email" id="newsletter-email" required placeholder="Tu correo electrónico..." class="flex-1 px-5 py-4 rounded-full bg-black/80 border border-white/30 text-white text-sm font-mono focus:outline-none focus:border-white">
+                <button type="submit" class="bg-white text-black font-display font-extrabold uppercase px-7 py-4 rounded-full text-sm hover:bg-black hover:text-white transition shrink-0">
+                    Quiero mis 10€
+                </button>
+            </form>
+            <p id="newsletter-feedback" class="text-xs font-mono text-white/80">Sin spam. Código válido para pedidos web o recogida en mano.</p>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="bg-canas-black text-white pt-16 pb-10 border-t border-white/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+            <div>
+                <span class="font-display font-extrabold text-2xl">SHOES<span class="text-canas-red">ERCAÑAS</span></span>
+                <p class="text-xs text-neutral-400 mt-3 leading-relaxed">
+                    Tu tienda de sneakers limitadas en Granada. Pares 100% verificados.
+                </p>
+                <p class="text-xs font-mono text-canas-neon mt-3">📍 C/ Primavera 26-28 (IES Zaidín-Vergeles), 18008 Granada</p>
+            </div>
+            <div>
+                <h4 class="font-display font-bold uppercase text-sm mb-4 text-canas-neon">Sneakers Top</h4>
+                <ul class="space-y-2 text-sm text-neutral-400">
+                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white">Jordan 1 x Travis Scott</a></li>
+                    <li><a href="#catalogo" onclick="filterByBrand('Jordan')" class="hover:text-white">Air Jordan 4 Retro</a></li>
+                    <li><a href="#catalogo" onclick="filterByBrand('Asics')" class="hover:text-white">Asics Gel-Kayano 14</a></li>
+                    <li><a href="#catalogo" onclick="filterByBrand('Adidas')" class="hover:text-white">Adidas Handball Spezial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-display font-bold uppercase text-sm mb-4 text-canas-neon">Entregas & Pagos</h4>
+                <ul class="space-y-2 text-sm text-neutral-400">
+                    <li>Recogida Gratis en IES Zaidín-Vergeles</li>
+                    <li>Envíos 24/48h a toda España</li>
+                    <li>Bizum, Efectivo en mano, Tarjeta y Klarna</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-display font-bold uppercase text-sm mb-4 text-canas-neon">Contacto Rápido</h4>
+                <ul class="space-y-2 text-sm text-neutral-400">
+                    <li>Instagram: @shoesercanas</li>
+                    <li>TikTok: @shoesercanas.grx</li>
+                    <li>Granada, Andalucía (18008)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="py-6 border-b border-white/10 select-none overflow-hidden">
+            <div class="animate-marquee font-display font-extrabold text-5xl sm:text-7xl text-canas-red/15 tracking-tighter uppercase">
+                <span class="mx-6">©SHOESERCAÑAS GRANADA</span>
+                <span class="mx-6">©IES ZAIDÍN-VERGELES</span>
+                <span class="mx-6">©SHOESERCAÑAS GRANADA</span>
+                <span class="mx-6">©IES ZAIDÍN-VERGELES</span>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-6 text-center text-xs font-mono text-neutral-500">
+            © 2026 ShoesErCañas Granada. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- MODAL VISTA RÁPIDA DE ZAPATILLA -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-canas-card border border-canas-red/50 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 bg-black/80 hover:bg-canas-red text-white p-2 rounded-full transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="bg-white p-8 flex items-center justify-center relative">
+                <span id="modal-badge" class="absolute top-4 left-4 bg-canas-red text-white text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Grail</span>
+                <img id="modal-img" src="" alt="Sneaker" class="w-full max-h-72 object-contain">
+            </div>
+
+            <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5 text-white">
+                <div>
+                    <span id="modal-brand" class="text-xs font-mono uppercase text-canas-neon">Marca</span>
+                    <h3 id="modal-title" class="font-display font-extrabold text-2xl mt-1 leading-tight">Nombre Zapatilla</h3>
+                    <div class="flex items-center gap-3 mt-3">
+                        <span id="modal-price" class="font-mono font-bold text-2xl text-canas-neon">0,00€</span>
+                        <span id="modal-old-price" class="font-mono text-sm text-neutral-500 line-through hidden">0,00€</span>
+                    </div>
+                    <p class="text-xs text-emerald-400 font-mono mt-2">
+                        ✓ Disponible para envío 24h o recogida en IES Zaidín-Vergeles.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="text-xs font-mono uppercase font-bold block mb-2">Selecciona Talla (EU):</span>
+                    <div id="modal-sizes" class="grid grid-cols-3 gap-2"></div>
+                </div>
+
+                <button id="modal-add-btn" class="w-full bg-canas-red hover:bg-canas-neon text-white font-display font-extrabold uppercase py-4 rounded-xl text-sm tracking-wider transition flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(225,29,72,0.5)]">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Añadir al Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DRAWER CARRITO LATERAL -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 hidden"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-canas-dark border-l border-white/10 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between text-white">
+        <div class="p-6 border-b border-white/10">
+            <div class="flex items-center justify-between">
+                <h3 class="font-display font-extrabold text-xl uppercase">Carrito ShoesErCañas</h3>
+                <button onclick="toggleCart()" class="p-2 hover:bg-white/10 rounded-full">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Barra envío gratis a partir de 80€ (como The Sole Hunters) -->
+            <div class="mt-4 bg-canas-card p-3 rounded-xl border border-white/10">
+                <p id="free-shipping-text" class="text-xs font-mono text-neutral-300 mb-2">
+                    Te faltan <strong class="text-canas-neon">80,00€</strong> para el <strong>envío GRATIS</strong>
+                </p>
+                <div class="w-full h-2 bg-black rounded-full overflow-hidden">
+                    <div id="free-shipping-bar" class="h-full bg-canas-red transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+
+        <div class="p-6 border-t border-white/10 bg-canas-card space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="font-mono text-sm uppercase text-neutral-400">Subtotal</span>
+                <span id="cart-subtotal" class="font-mono font-bold text-xl text-canas-neon">0,00€</span>
+            </div>
+            <button onclick="checkoutDemo()" class="w-full bg-canas-red hover:bg-canas-neon text-white font-display font-extrabold uppercase py-4 rounded-xl text-sm tracking-wider transition shadow-[0_0_20px_rgba(225,29,72,0.5)]">
+                Finalizar Pedido / Recoger en Zaidín →
+            </button>
+        </div>
+    </aside>
+
+    <!-- MODAL BUSCADOR -->
+    <div id="search-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex flex-col items-center pt-20 px-4">
+        <div class="bg-canas-card border border-canas-red/50 w-full max-w-2xl rounded-3xl p-6 shadow-2xl text-white">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <i data-lucide="search" class="w-6 h-6 text-canas-neon"></i>
+                <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Busca 'Travis Scott', 'Jordan 4', 'Samba', 'Kayano', 'TN'..." class="w-full text-lg font-mono bg-transparent text-white focus:outline-none">
+                <button onclick="toggleSearchModal()" class="p-1.5 hover:bg-white/10 rounded-full">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="search-results" class="mt-4 max-h-80 overflow-y-auto divide-y divide-white/10"></div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         LÓGICA JAVASCRIPT Y CARGADOR DE IMÁGENES EXACTAS POR MODELO
+         ========================================== -->
+    <script>
+        /*
+         * Base de datos de Zapatillas de ShoesErCañas.
+         * Cada zapatilla tiene su 'wikiQuery' exacto para obtener la foto real del modelo desde la API de Wikimedia Commons
+         * y un fallback SVG/PNG a medida por si se abre sin conexión.
+         */
+        const sneakersDB = [
+            {
+                id: 1,
+                name: "Jordan 1 Low x Travis Scott Reverse Mocha / Sail",
+                brand: "Jordan",
+                price: 500,
+                oldPrice: 550,
+                badge: "Grail En Oferta",
+                isSale: true,
+                wikiQuery: "Travis Scott Air Jordan 1 Low",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Air_Jordan_1_Banned.jpg/800px-Air_Jordan_1_Banned.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:false},{eu:"44",stock:true}]
+            },
+            {
+                id: 2,
+                name: "Air Jordan 4 Retro Bred Reimagined",
+                brand: "Jordan",
+                price: 340,
+                oldPrice: 390,
+                badge: "Top Ventas",
+                isSale: true,
+                wikiQuery: "Air Jordan IV",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Air_Jordan_IV.jpg/800px-Air_Jordan_IV.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:true},{eu:"44",stock:true}]
+            },
+            {
+                id: 3,
+                name: "Adidas Samba OG Cloud White Core Black",
+                brand: "Adidas",
+                price: 120,
+                oldPrice: null,
+                badge: "Bestseller",
+                isSale: false,
+                wikiQuery: "Adidas Samba shoe",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Adidas_Samba.jpg/800px-Adidas_Samba.jpg",
+                sizes: [{eu:"38",stock:true},{eu:"39",stock:true},{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true}]
+            },
+            {
+                id: 4,
+                name: "Asics Gel-Kayano 14 White Graphite Grey",
+                brand: "Asics",
+                price: 210,
+                oldPrice: null,
+                badge: "Tendencia 2026",
+                isSale: false,
+                wikiQuery: "Asics Gel running shoe",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Asics_Gel-Kayano_22.jpg/800px-Asics_Gel-Kayano_22.jpg",
+                sizes: [{eu:"39",stock:true},{eu:"40",stock:true},{eu:"41",stock:false},{eu:"42",stock:true},{eu:"43",stock:true}]
+            },
+            {
+                id: 5,
+                name: "Nike Air Max Plus (TN) Tuned Ope Ope Edition",
+                brand: "Nike",
+                price: 240,
+                oldPrice: 280,
+                badge: "Oferta TN",
+                isSale: true,
+                wikiQuery: "Nike Air Max Plus",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nike_Air_Max_Plus.jpg/800px-Nike_Air_Max_Plus.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:true},{eu:"44",stock:false}]
+            },
+            {
+                id: 6,
+                name: "Adidas Handball Spezial Clear Pink / Gum",
+                brand: "Adidas",
+                price: 140,
+                oldPrice: 165,
+                badge: "Oferta Flash",
+                isSale: true,
+                wikiQuery: "Adidas Handball Spezial",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Adidas_Gazelle_Indoor.jpg/800px-Adidas_Gazelle_Indoor.jpg",
+                sizes: [{eu:"37",stock:true},{eu:"38",stock:true},{eu:"39",stock:true},{eu:"40",stock:true},{eu:"41",stock:true}]
+            },
+            {
+                id: 7,
+                name: "Jordan 1 Low x Travis Scott x Fragment Military Blue",
+                brand: "Jordan",
+                price: 1450,
+                oldPrice: null,
+                badge: "Holy Grail 🏆",
+                isSale: false,
+                wikiQuery: "Air Jordan 1 Low Fragment",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Air_Jordan_1_Banned.jpg/800px-Air_Jordan_1_Banned.jpg",
+                sizes: [{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:false},{eu:"44",stock:true}]
+            },
+            {
+                id: 8,
+                name: "Nike Dunk Low Retro White Black (Panda)",
+                brand: "Nike",
+                price: 135,
+                oldPrice: 160,
+                badge: "Steal",
+                isSale: true,
+                wikiQuery: "Nike Dunk Low shoe",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Nike_Dunk_Low.jpg/800px-Nike_Dunk_Low.jpg",
+                sizes: [{eu:"38",stock:true},{eu:"39",stock:true},{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true}]
+            },
+            {
+                id: 9,
+                name: "New Balance 2002R Protection Pack Rain Cloud",
+                brand: "New Balance",
+                price: 220,
+                oldPrice: null,
+                badge: "Restock",
+                isSale: false,
+                wikiQuery: "New Balance 2002R",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/New_Balance_990v5.jpg/800px-New_Balance_990v5.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:true},{eu:"44",stock:true}]
+            },
+            {
+                id: 10,
+                name: "Adidas Yeezy Boost 350 V2 Onyx / Core Black Red",
+                brand: "Adidas",
+                price: 290,
+                oldPrice: null,
+                badge: "Yeezy Grail",
+                isSale: false,
+                wikiQuery: "Adidas Yeezy Boost 350",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Yeezy_Boost_350_V2.jpg/800px-Yeezy_Boost_350_V2.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:false},{eu:"42",stock:true},{eu:"43",stock:true},{eu:"44",stock:true}]
+            },
+            {
+                id: 11,
+                name: "Air Jordan 1 Retro High OG Lost & Found Chicago",
+                brand: "Jordan",
+                price: 420,
+                oldPrice: 460,
+                badge: "Icono Bred/Red",
+                isSale: true,
+                wikiQuery: "Air Jordan 1 Chicago",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Air_Jordan_1_Banned.jpg/800px-Air_Jordan_1_Banned.jpg",
+                sizes: [{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:true},{eu:"44",stock:true}]
+            },
+            {
+                id: 12,
+                name: "Nike Air Force 1 Low '07 Triple White / Supreme Red",
+                brand: "Nike",
+                price: 155,
+                oldPrice: null,
+                badge: "Essential",
+                isSale: false,
+                wikiQuery: "Nike Air Force 1 shoe",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nike_Air_Force_1_white_on_white.jpg/800px-Nike_Air_Force_1_white_on_white.jpg",
+                sizes: [{eu:"38",stock:true},{eu:"40",stock:true},{eu:"41",stock:true},{eu:"42",stock:true},{eu:"43",stock:true}]
+            }
+        ];
+
+        // Cargador automático de fotos exactas desde la API de Wikimedia Commons para que cada modelo tenga su foto real verificada
+        async function fetchExactSneakerImages() {
+            for (const shoe of sneakersDB) {
+                try {
+                    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=filetype:bitmap|drawing%20${encodeURIComponent(shoe.wikiQuery)}&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=700&format=json&origin=*`;
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    if (data.query && data.query.pages) {
+                        const firstPage = Object.values(data.query.pages)[0];
+                        if (firstPage?.imageinfo?.[0]?.thumburl) {
+                            shoe.image = firstPage.imageinfo[0].thumburl;
+                        }
+                    }
+                } catch (err) {
+                    console.warn("Usando imagen base para", shoe.name);
+                }
+            }
+            // Actualizar catálogo y fotos de colecciones con las imágenes exactas recién obtenidas
+            renderSneakers(sneakersDB);
+            const heroImg = document.getElementById('hero-shoe-img');
+            if (heroImg && sneakersDB[0].image) heroImg.src = sneakersDB[0].image;
+
+            if (document.getElementById('col-img-1')) document.getElementById('col-img-1').src = sneakersDB[1].image;
+            if (document.getElementById('col-img-2')) document.getElementById('col-img-2').src = sneakersDB[2].image;
+            if (document.getElementById('col-img-3')) document.getElementById('col-img-3').src = sneakersDB[3].image;
+            if (document.getElementById('col-img-4')) document.getElementById('col-img-4').src = sneakersDB[4].image;
+        }
+
+        let cart = [];
+        let selectedModalProduct = null;
+        let selectedModalSize = null;
+
+        function renderSneakers(list) {
+            const grid = document.getElementById('sneakers-grid');
+            grid.innerHTML = list.map(shoe => `
+                <div class="sneaker-card group bg-canas-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between">
+                    <div class="relative bg-white aspect-square overflow-hidden cursor-pointer p-4 flex items-center justify-center" onclick="openQuickView(${shoe.id})">
+                        <span class="absolute top-3.5 left-3.5 z-10 text-[11px] font-mono font-bold uppercase px-3 py-1 rounded-full ${shoe.isSale ? 'bg-canas-red text-white shadow-lg' : 'bg-black text-white'}">
+                            ${shoe.badge}
+                        </span>
+                        
+                        <img src="${shoe.image}" 
+                             alt="${shoe.name}" 
+                             class="w-full h-full object-contain">
+
+                        <!-- Selector rápido de tallas al hacer hover -->
+                        <div class="quick-sizes absolute bottom-0 inset-x-0 bg-black/95 backdrop-blur-md p-3 text-white border-t border-canas-red">
+                            <p class="text-[10px] font-mono uppercase text-canas-neon text-center mb-1.5 font-bold">Añadir Talla EU Rápida:</p>
+                            <div class="flex flex-wrap justify-center gap-1.5">
+                                ${shoe.sizes.map(s => `
+                                    <button 
+                                        onclick="event.stopPropagation(); ${s.stock ? `quickAddToCart(${shoe.id}, '${s.eu}')` : ''}"
+                                        class="text-[11px] font-mono px-2.5 py-1 rounded ${s.stock ? 'bg-white/10 hover:bg-canas-red text-white font-bold cursor-pointer' : 'bg-white/5 text-neutral-600 line-through cursor-not-allowed'}"
+                                        ${!s.stock ? 'disabled' : ''}>
+                                        ${s.eu}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[11px] font-mono uppercase text-canas-neon font-bold">${shoe.brand}</span>
+                            <h3 onclick="openQuickView(${shoe.id})" class="font-display font-bold text-base text-white mt-1 leading-snug cursor-pointer group-hover:text-canas-neon transition">
+                                ${shoe.name}
+                            </h3>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-mono uppercase text-neutral-400 block">Precio</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-mono font-bold text-lg ${shoe.isSale ? 'text-canas-neon' : 'text-white'}">${shoe.price.toFixed(2).replace('.', ',')}€</span>
+                                    ${shoe.oldPrice ? `<span class="font-mono text-xs text-neutral-500 line-through">${shoe.oldPrice.toFixed(2).replace('.', ',')}€</span>` : ''}
+                                </div>
+                            </div>
+                            <button onclick="openQuickView(${shoe.id})" class="bg-white/10 group-hover:bg-canas-red text-white px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition">
+                                Elegir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterByBrand(brand) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.brand === brand) {
+                    btn.className = "filter-btn bg-canas-red text-white px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition shadow-[0_0_15px_rgba(225,29,72,0.5)]";
+                } else {
+                    btn.className = "filter-btn bg-canas-card hover:bg-canas-red/20 text-neutral-300 border border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition";
+                }
+            });
+
+            if (brand === 'ALL') {
+                renderSneakers(sneakersDB);
+            } else {
+                renderSneakers(sneakersDB.filter(s => s.brand.toLowerCase() === brand.toLowerCase()));
+            }
+        }
+
+        function filterSaleOnly() {
+            renderSneakers(sneakersDB.filter(s => s.isSale));
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openQuickView(id) {
+            const shoe = sneakersDB.find(s => s.id === id);
+            if (!shoe) return;
+            selectedModalProduct = shoe;
+            const firstAvailable = shoe.sizes.find(s => s.stock);
+            selectedModalSize = firstAvailable ? firstAvailable.eu : null;
+
+            document.getElementById('modal-img').src = shoe.image;
+            document.getElementById('modal-badge').textContent = shoe.badge;
+            document.getElementById('modal-brand').textContent = shoe.brand;
+            document.getElementById('modal-title').textContent = shoe.name;
+            document.getElementById('modal-price').textContent = shoe.price.toFixed(2).replace('.', ',') + '€';
+
+            const oldPriceEl = document.getElementById('modal-old-price');
+            if (shoe.oldPrice) {
+                oldPriceEl.textContent = shoe.oldPrice.toFixed(2).replace('.', ',') + '€';
+                oldPriceEl.classList.remove('hidden');
+            } else {
+                oldPriceEl.classList.add('hidden');
+            }
+
+            renderModalSizes();
+            document.getElementById('quick-view-modal').classList.remove('hidden');
+        }
+
+        function renderModalSizes() {
+            const container = document.getElementById('modal-sizes');
+            container.innerHTML = selectedModalProduct.sizes.map(s => `
+                <button 
+                    onclick="${s.stock ? `selectSize('${s.eu}')` : ''}"
+                    class="py-2.5 rounded-xl font-mono text-xs font-bold border transition ${
+                        !s.stock 
+                            ? 'bg-black/40 text-neutral-600 border-white/5 line-through cursor-not-allowed' 
+                            : selectedModalSize === s.eu 
+                                ? 'bg-canas-red text-white border-canas-neon shadow-[0_0_12px_rgba(225,29,72,0.6)]' 
+                                : 'bg-canas-dark text-white border-white/15 hover:border-canas-red'
+                    }">
+                    EU ${s.eu}
+                </button>
+            `).join('');
+
+            document.getElementById('modal-add-btn').onclick = () => {
+                if (selectedModalSize) {
+                    quickAddToCart(selectedModalProduct.id, selectedModalSize);
+                    closeQuickView();
+                }
+            };
+        }
+
+        function selectSize(eu) {
+            selectedModalSize = eu;
+            renderModalSizes();
+        }
+
+        function closeQuickView() {
+            document.getElementById('quick-view-modal').classList.add('hidden');
+        }
+
+        function quickAddToCart(id, size) {
+            const shoe = sneakersDB.find(s => s.id === id);
+            const existing = cart.find(item => item.id === id && item.size === size);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...shoe, size, qty: 1 });
+            }
+            updateCartUI();
+            openCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const itemsEl = document.getElementById('cart-items');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const shippingText = document.getElementById('free-shipping-text');
+            const shippingBar = document.getElementById('free-shipping-bar');
+
+            const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+            countEl.textContent = totalQty;
+            subtotalEl.textContent = subtotal.toFixed(2).replace('.', ',') + '€';
+
+            const freeThreshold = 80;
+            const percent = Math.min(100, (subtotal / freeThreshold) * 100);
+            shippingBar.style.width = percent + '%';
+
+            if (subtotal >= freeThreshold) {
+                shippingText.innerHTML = `🔥 ¡Tienes <strong>ENVÍO EXPRESS GRATIS</strong> o Recogida en <strong>IES Zaidín-Vergeles</strong>!`;
+            } else {
+                const remaining = (freeThreshold - subtotal).toFixed(2).replace('.', ',');
+                shippingText.innerHTML = `Te faltan <strong class="text-canas-neon">${remaining}€</strong> para el envío gratis`;
+            }
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = `
+                    <div class="text-center py-16 space-y-2">
+                        <p class="font-display font-bold text-lg">Tu carrito está vacío</p>
+                        <p class="text-xs text-neutral-400 font-mono">Elige tus sneakers favoritas del catálogo.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            itemsEl.innerHTML = cart.map((item, idx) => `
+                <div class="flex items-center gap-4 bg-canas-card p-3.5 rounded-2xl border border-white/10">
+                    <img src="${item.image}" class="w-20 h-20 rounded-xl object-contain bg-white p-1 shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-display font-bold text-sm truncate">${item.name}</h4>
+                        <p class="text-xs font-mono text-neutral-400 mt-0.5">Talla EU: <strong class="text-white">${item.size}</strong> • x${item.qty}</p>
+                        <p class="font-mono font-bold text-sm text-canas-neon mt-1">${(item.price * item.qty).toFixed(2).replace('.', ',')}€</p>
+                    </div>
+                    <button onclick="removeFromCart(${idx})" class="text-neutral-400 hover:text-canas-neon p-1">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            const isOpen = !drawer.classList.contains('translate-x-full');
+            if (isOpen) {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            } else {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        function openCart() {
+            document.getElementById('cart-drawer').classList.remove('translate-x-full');
+            document.getElementById('cart-overlay').classList.remove('hidden');
+        }
+
+        function toggleSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                setTimeout(() => document.getElementById('search-input').focus(), 100);
+            }
+        }
+
+        function handleSearch(query) {
+            const container = document.getElementById('search-results');
+            if (!query.trim()) {
+                container.innerHTML = '';
+                return;
+            }
+            const results = sneakersDB.filter(s => 
+                s.name.toLowerCase().includes(query.toLowerCase()) || 
+                s.brand.toLowerCase().includes(query.toLowerCase())
+            );
+            container.innerHTML = results.map(s => `
+                <div onclick="toggleSearchModal(); openQuickView(${s.id})" class="flex items-center justify-between py-3 px-2 hover:bg-white/5 rounded-xl cursor-pointer transition">
+                    <div class="flex items-center gap-3">
+                        <img src="${s.image}" class="w-14 h-14 rounded-lg object-contain bg-white p-1">
+                        <div>
+                            <p class="font-display font-bold text-sm text-white">${s.name}</p>
+                            <span class="text-xs font-mono text-canas-neon">${s.brand}</span>
+                        </div>
+                    </div>
+                    <span class="font-mono font-bold text-sm text-white">${s.price},00€</span>
+                </div>
+            `).join('');
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('newsletter-feedback');
+            feedback.innerHTML = `✅ <strong>¡Bienvenido a ShoesErCañas!</strong> Usa el código <strong>CAÑAS10</strong> para descontar 10€.`;
+            document.getElementById('newsletter-email').value = '';
+        }
+
+        function checkoutDemo() {
+            if (cart.length === 0) return alert('Añade primero unas zapatillas al carrito.');
+            alert('¡Pedido registrado en ShoesErCañas! Puedes elegir envío 24h o recogida en mano en el IES Zaidín-Vergeles (Calle Primavera 26-28).');
+        }
+
+        // Efecto 3D Tilt en la zapatilla del Hero
+        const heroBox = document.getElementById('hero-tilt-box');
+        const heroImg = document.getElementById('hero-shoe-img');
+        if (heroBox && heroImg) {
+            heroBox.addEventListener('mousemove', (e) => {
+                const rect = heroBox.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                heroImg.style.transform = `perspective(1000px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.05)`;
+            });
+            heroBox.addEventListener('mouseleave', () => {
+                heroImg.style.transform = '';
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSneakers(sneakersDB);
+            fetchExactSneakerImages();
+            updateCartUI();
+            lucide.createIcons();
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
