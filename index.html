@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Escuela y Compañía de Flamenco Tatiana Garrido en Granada. Clases de baile flamenco para todos los niveles y espectáculos internacionales." />
+  <title>Tatiana Garrido | Escuela y Compañía de Flamenco en Granada</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #0d0b0c;
+      --bg-surface: #161214;
+      --bg-card: #1e181b;
+      --bg-light: #f8f4ee;
+      --bg-light-alt: #efe8dd;
+      --crimson: #a31d24;
+      --crimson-hover: #c4242d;
+      --gold: #c89b3c;
+      --gold-light: #e2be6b;
+      --text-light: #f7f3ed;
+      --text-muted-dark: #b8aeb1;
+      --text-dark: #1c1718;
+      --text-muted-light: #5c5053;
+      --border-dark: rgba(200, 155, 60, 0.22);
+      --border-light: rgba(28, 23, 24, 0.12);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.85rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--crimson);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(163, 29, 36, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--crimson-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Etiquetas de sección */
+    .section-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      max-width: 650px;
+      opacity: 0.85;
+    }
+
+    /* Header & Navegación */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.15rem 0;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(13, 11, 12, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      padding: 0.8rem 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      margin-top: 0.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-light);
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      background:
+        linear-gradient(105deg, rgba(13, 11, 12, 0.94) 0%, rgba(13, 11, 12, 0.78) 55%, rgba(163, 29, 36, 0.35) 100%),
+        url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: rgba(200, 155, 60, 0.14);
+      border: 1px solid var(--border-dark);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: var(--text-muted-dark);
+      max-width: 580px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+
+    .stat-item span {
+      font-size: 0.82rem;
+      color: var(--text-muted-dark);
+    }
+
+    .hero-card {
+      background: rgba(22, 18, 20, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-card h3 {
+      font-size: 1.65rem;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin: 1.25rem 0;
+    }
+
+    .hero-card li {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .hero-card li span:first-child {
+      color: var(--text-muted-dark);
+    }
+
+    .hero-card li span:last-child {
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Sección Biografía / Legado (Fondo Claro Editorial) */
+    .section-light {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      padding: 6rem 0;
+    }
+
+    .section-light .section-subtitle {
+      color: var(--text-muted-light);
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .bio-image-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(28, 23, 24, 0.18);
+    }
+
+    .bio-image-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .bio-quote {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      background: rgba(13, 11, 12, 0.9);
+      color: var(--text-light);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .bio-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    .bio-content p {
+      margin-bottom: 1.15rem;
+      color: #362e30;
+      font-size: 1.02rem;
+    }
+
+    .palos-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .palo-pill {
+      padding: 0.45rem 1rem;
+      background: var(--bg-light-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--crimson);
+    }
+
+    /* Sección Escuela */
+    .section-dark {
+      background-color: var(--bg-dark);
+      padding: 6rem 0;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-header-center .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .filter-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-dark);
+      color: var(--text-muted-dark);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: #fff;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .course-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .course-level {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .course-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .course-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .course-meta {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+    }
+
+    /* Sección Compañía & Espectáculos */
+    .shows-tabs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1rem;
+    }
+
+    .show-tab {
+      background: none;
+      border: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-muted-light);
+      cursor: pointer;
+      padding: 0.35rem 0.75rem;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .show-tab.active {
+      color: var(--crimson);
+      border-bottom-color: var(--crimson);
+    }
+
+    .show-panel {
+      display: none;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 15px 40px rgba(28, 23, 24, 0.08);
+    }
+
+    .show-panel.active {
+      display: grid;
+    }
+
+    .show-panel h3 {
+      font-size: 2.2rem;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .show-badge {
+      display: inline-block;
+      background: rgba(163, 29, 36, 0.1);
+      color: var(--crimson);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .show-panel p {
+      color: var(--text-muted-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .show-panel img {
+      border-radius: 8px;
+      height: 320px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .cast-box {
+      margin-top: 3rem;
+      background: var(--bg-light-alt);
+      padding: 2rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+    }
+
+    .cast-box h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .cast-grid strong {
+      color: var(--crimson);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Contacto y Mapa */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 3rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+    }
+
+    .info-list {
+      list-style: none;
+      margin: 1.75rem 0;
+    }
+
+    .info-list li {
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-list strong {
+      color: var(--gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .info-list span, .info-list a {
+      font-size: 1.02rem;
+      color: var(--text-light);
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 220px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 1rem;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: var(--text-muted-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: var(--bg-surface);
+      color: var(--text-light);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.25s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .form-feedback {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: rgba(46, 125, 50, 0.2);
+      border: 1px solid #4caf50;
+      color: #a5d6a7;
+    }
+
+    /* Footer */
+    footer {
+      background: #080708;
+      border-top: 1px solid var(--border-dark);
+      padding: 3.5rem 0 2rem;
+      color: var(--text-muted-dark);
+      font-size: 0.9rem;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .hero-grid,
+      .bio-grid,
+      .show-panel.active,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 68px;
+        right: -100%;
+        width: 260px;
+        height: calc(100vh - 68px);
+        background: var(--bg-surface);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        border-left: 1px solid var(--border-dark);
+        transition: right 0.35s ease;
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header id="navbar">
+    <div class="container nav-wrapper">
+      <a href="#inicio" class="brand">
+        <span class="brand-name">TATIANA GARRIDO</span>
+        <span class="brand-sub">Escuela &amp; Compañía de Flamenco</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#legado">Legado</a></li>
+        <li><a href="#escuela">Escuela de Baile</a></li>
+        <li><a href="#compania">Compañía</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#contacto" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">Reservar Clase</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Principal -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge">Granada &bull; Cuna del Arte Flamenco</span>
+        <h1>El duende, la técnica y la herencia viva del <em>flamenco</em></h1>
+        <p>
+          Formación profesional y amateur en el corazón de Granada junto a la bailaora Tatiana Garrido, heredera artística de la maestra Mariquilla, y producciones escénicas de proyección internacional.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#escuela" class="btn btn-primary">Explorar Clases y Niveles</a>
+          <a href="#compania" class="btn btn-outline">Ver Espectáculos</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>+25 años</strong>
+            <span>De trayectoria escénica y docente</span>
+          </div>
+          <div class="stat-item">
+            <strong>Granada</strong>
+            <span>Escuela en C/ Santa Clotilde</span>
+          </div>
+          <div class="stat-item">
+            <strong>Internacional</strong>
+            <span>Giras en Europa, Asia y Oriente Medio</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Información Rápida</h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted-dark);">
+          Matrícula abierta durante todo el curso para alumnos locales e internacionales.
+        </p>
+        <ul>
+          <li>
+            <span>Ubicación</span>
+            <span>C/ Santa Clotilde 14 Bajo, Granada</span>
+          </li>
+          <li>
+            <span>Teléfono Fijo</span>
+            <span><a href="tel:+34958292310">+34 958 292 310</a></span>
+          </li>
+          <li>
+            <span>Móvil / WhatsApp</span>
+            <span><a href="tel:+34659058937">+34 659 058 937</a></span>
+          </li>
+          <li>
+            <span>Email Oficial</span>
+            <span><a href="mailto:info@tatianagarrido.com">info@tatianagarrido.com</a></span>
+          </li>
+          <li>
+            <span>Management</span>
+            <span>Neptuno Show Management S.L.</span>
+          </li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Solicitar Información</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Biografía y Legado -->
+  <section id="legado" class="section-light">
+    <div class="container bio-grid">
+      <div class="bio-image-wrap">
+        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=900&q=80" alt="Baile flamenco tradicional en escenario" />
+        <div class="bio-quote">
+          <p>«Cada palo tiene su propio embrujo; el secreto está en sentir el compás desde dentro antes de marcar el primer paso.»</p>
+        </div>
+      </div>
+
+      <div class="bio-content">
+        <span class="section-tag">Trayectoria y Raíces</span>
+        <h2 class="section-title">Tatiana Garrido Guardia, <em>«La Españoleta»</em></h2>
+        <p>
+          Nacida en Málaga y forjada artísticamente en Granada desde los doce años, Tatiana Garrido es hija de la legendaria bailaora y catedrática de flamenco <strong>«Mariquilla»</strong>, con quien recorrió los principales teatros del mundo desde muy joven.
+        </p>
+        <p>
+          Reconocida por la elegancia de sus brazos, su fuerza expresiva y una gracia natural inconfundible sobre las tablas, impartió docencia a temprana edad en la <strong>Cátedra de Flamencología de la Universidad de Granada</strong>.
+        </p>
+        <p>
+          Actualmente compagina la dirección de su propia compañía teatral con la enseñanza diaria en su escuela granadina, transmitiendo tanto la pureza de la escuela tradicional como los lenguajes escénicos contemporáneos.
+        </p>
+
+        <div class="palos-pills">
+          <span class="palo-pill">Bulerías</span>
+          <span class="palo-pill">Alegrías</span>
+          <span class="palo-pill">Soleá</span>
+          <span class="palo-pill">Tangos de Granada</span>
+          <span class="palo-pill">Bata de Cola y Mantón</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Escuela de Baile Flamenco -->
+  <section id="escuela" class="section-dark">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag">Formación en Granada</span>
+        <h2 class="section-title">Escuela de Baile Flamenco</h2>
+        <p class="section-subtitle">
+          Programas estructurados para todas las edades y niveles, con acompañamiento de guitarra y cante en directo en sesiones especiales.
+        </p>
+      </div>
+
+      <div class="filter-bar" role="tablist">
+        <button class="filter-btn active" data-filter="all">Todos los Cursos</button>
+        <button class="filter-btn" data-filter="niveles">Por Niveles</button>
+        <button class="filter-btn" data-filter="tecnica">Técnica y Complementos</button>
+        <button class="filter-btn" data-filter="intensivos">Intensivos y Extranjeros</button>
+      </div>
+
+      <div class="courses-grid" id="coursesGrid">
+        <article class="course-card" data-category="niveles">
+          <div>
+            <div class="course-level">Nivel I &bull; Sin experiencia previa</div>
+            <h3>Iniciación al Flamenco</h3>
+            <p>Aprende la colocación corporal, braceo, marcajes básicos, introducción al zapateado y comprensión del compás de 4 y 12 tiempos (tangos y alegrías).</p>
+          </div>
+          <div class="course-meta">
+            <span>Grupos reducidos</span>
+            <span>Mañana / Tarde</span>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="niveles">
+          <div>
+            <div class="course-level">Nivel II &bull; Consolidación</div>
+            <h3>Nivel Intermedio y Coreografía</h3>
+            <p>Montaje completo de palos tradicionales (soleá por bulerías, tientos, cantiñas), estructura del baile (llamada, letra, escobilla y macho) e interpretación.</p>
+          </div>
+          <div class="course-meta">
+            <span>2-3 días / semana</span>
+            <span>Granada Centro</span>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="niveles">
+          <div>
+            <div class="course-level">Nivel III &bull; Profesional</div>
+            <h3>Avanzado y Tablao</h3>
+            <p>Perfeccionamiento escénico, improvisación con cante y guitarra en vivo, dominio de remates por bulerías y preparación para audiciones y tablaos.</p>
+          </div>
+          <div class="course-meta">
+            <span>Música en directo</span>
+            <span>Alta exigencia</span>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="tecnica">
+          <div>
+            <div class="course-level">Especialización</div>
+            <h3>Bata de Cola, Mantón y Castañuelas</h3>
+            <p>Talleres monográficos dedicados al manejo técnico de la bata de cola, vuelo y colocación del mantón de Manila y toque tradicional de palillos.</p>
+          </div>
+          <div class="course-meta">
+            <span>Talleres semanales</span>
+            <span>Todos los niveles</span>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="tecnica">
+          <div>
+            <div class="course-level">Cantera</div>
+            <h3>Flamenco Infantil y Juvenil</h3>
+            <p>Clases dinámicas adaptadas a niños y jóvenes para desarrollar el sentido del ritmo, la coordinación, la expresión artística y el amor por la cultura andaluza.</p>
+          </div>
+          <div class="course-meta">
+            <span>A partir de 5 años</span>
+            <span>Horario escolar</span>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="intensivos">
+          <div>
+            <div class="course-level">Estancias Culturales</div>
+            <h3>Cursos Intensivos Internacionales</h3>
+            <p>Programas inmersivos de 1 a 4 semanas diseñados para estudiantes y grupos extranjeros que visitan Granada buscando formación intensiva de alta calidad.</p>
+          </div>
+          <div class="course-meta">
+            <span>Español / Inglés</span>
+            <span>Certificado incluido</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compañía de Flamenco -->
+  <section id="compania" class="section-light">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag">Producciones Escénicas</span>
+        <h2 class="section-title">Compañía de Flamenco Tatiana Garrido</h2>
+        <p class="section-subtitle">
+          Espectáculos de gran formato e intimistas que fusionan la raíz más pura del cante, el toque y el baile con una puesta en escena vanguardista.
+        </p>
+      </div>
+
+      <div class="shows-tabs">
+        <button class="show-tab active" data-show="fuego">Fuego y Arena</button>
+        <button class="show-tab" data-show="suenos">Sueños del Flamenco</button>
+        <button class="show-tab" data-show="ecuestre">Flamenco Equestrian</button>
+        <button class="show-tab" data-show="intimo">Flamenco Íntimo</button>
+      </div>
+
+      <!-- Panel 1 -->
+      <div class="show-panel active" id="show-fuego">
+        <div>
+          <span class="show-badge">Premio Mejor Espectáculo Flamenco &bull; Antalya</span>
+          <h3>Fuego y Arena</h3>
+          <p>
+            Aclamada en escenarios internacionales como la <strong>Ópera House de El Cairo</strong> y galardonada por el Ministerio de Cultura de Turquía en el Festival de Danza y Teatro de Antalya.
+          </p>
+          <p>
+            Un recorrido vibrante por los elementos esenciales del arte jondo donde la fuerza del zapateado dialoga con una iluminación teatral envolvente.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Contratar Producción</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=900&q=80" alt="Espectáculo Fuego y Arena" />
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="show-panel" id="show-suenos">
+        <div>
+          <span class="show-badge">Gira Nacional e Internacional</span>
+          <h3>Sueños del Flamenco</h3>
+          <p>
+            La obra inaugural de la compañía que consolidó el sello personal de Tatiana Garrido ante la crítica especializada y el gran público.
+          </p>
+          <p>
+            Un viaje coreográfico que enlaza los palos festeros de Andalucía con la profundidad dramática de la soleá y la seguiriya.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Solicitar Dossier</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=900&q=80" alt="Sueños del Flamenco" />
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="show-panel" id="show-ecuestre">
+        <div>
+          <span class="show-badge">Fusión de Alta Escuela Ecuestre y Baile</span>
+          <h3>Flamenco Equestrian</h3>
+          <p>
+            Una apuesta escénica singular donde la doma clásica y la <strong>Alta Escuela Ecuestre</strong>, bajo la dirección del maestro de jinetes Pedro Córdoba, se funden al compás del baile flamenco.
+          </p>
+          <p>
+            Sincronía perfecta entre caballo, jinete, bailaora y música en directo para grandes recintos y festivales.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Consultar Disponibilidad</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=900&q=80" alt="Flamenco Equestrian" />
+      </div>
+
+      <!-- Panel 4 -->
+      <div class="show-panel" id="show-intimo">
+        <div>
+          <span class="show-badge">Formato Cercano y Auditorios</span>
+          <h3>Flamenco Íntimo</h3>
+          <p>
+            La esencia desnuda del tablao llevada al teatro: cercanía absoluta entre el público, el quejío del cante, el bordón de la guitarra y el taconeo de Tatiana Garrido.
+          </p>
+          <p>
+            Ideal para ciclos culturales, auditorios municipales y eventos privados de alto nivel.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Reservar Fecha</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80" alt="Flamenco Íntimo" />
+      </div>
+
+      <!-- Elenco Artístico -->
+      <div class="cast-box">
+        <h4>Elenco Artístico y Equipo Técnico Habitual</h4>
+        <div class="cast-grid">
+          <div>
+            <strong>Dirección Artística</strong>
+            Tatiana Garrido
+          </div>
+          <div>
+            <strong>Dirección Musical y Guitarra</strong>
+            Luis Mariano, Juanjo Martín, Manuel Cortés
+          </div>
+          <div>
+            <strong>Cante</strong>
+            Manuel Heredia, Antonio Heredia, Fita Heredia, Sandra Santisteban
+          </div>
+          <div>
+            <strong>Instrumentación y Percusión</strong>
+            Eloy Heredia (flauta), Julio Muñoz (violín), José Manuel Cañizares (percusión)
+          </div>
+          <div>
+            <strong>Bailaores Invitados</strong>
+            Moisés Navarro, Agustín Barajas, Iván Vargas, Javier Pérez, Javier Martos
+          </div>
+          <div>
+            <strong>Producción Ejecutiva</strong>
+            Neptuno Show Management, S.L.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto y Ubicación -->
+  <section id="contacto" class="section-dark">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag">Visítanos o Escríbenos</span>
+        <h2 class="section-title">Contacto e Inscripciones</h2>
+        <p class="section-subtitle">
+          Estamos en pleno centro de Granada. Ponte en contacto para reservar tu clase de prueba o gestionar la contratación de la compañía.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 style="font-size: 1.8rem; color: var(--gold-light);">Sede en Granada</h3>
+          <ul class="info-list">
+            <li>
+              <strong>Dirección de la Escuela y Oficina</strong>
+              <span>C/ Santa Clotilde 14 Bajo, 18003 – Granada (España)</span>
+            </li>
+            <li>
+              <strong>Teléfonos de Atención</strong>
+              <span>
+                <a href="tel:+34958292310">+34 958 292 310</a> &nbsp;|&nbsp;
+                <a href="tel:+34659058937">+34 659 058 937</a>
+              </span>
+            </li>
+            <li>
+              <strong>Correo Electrónico</strong>
+              <a href="mailto:info@tatianagarrido.com">info@tatianagarrido.com</a>
+            </li>
+            <li>
+              <strong>Empresa Productora</strong>
+              <span>Neptuno Show Management S.L.</span>
+            </li>
+          </ul>
+
+          <iframe
+            class="map-frame"
+            title="Ubicación Escuela de Baile Flamenco Tatiana Garrido en Granada"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-3.6095%2C37.1755%2C-3.6025%2C37.1795&amp;layer=mapnik&amp;marker=37.1775%2C-3.6060">
+          </iframe>
+        </div>
+
+        <div class="contact-card">
+          <h3 style="font-size: 1.8rem; color: var(--gold-light); margin-bottom: 1.25rem;">Envíanos tu Consulta</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Ej. Laura García" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" class="form-control" placeholder="tuemail@ejemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="motivo">Motivo de contacto</label>
+              <select id="motivo" class="form-control">
+                <option value="clases">Información sobre clases y horarios</option>
+                <option value="prueba">Reservar clase de prueba</option>
+                <option value="intensivo">Curso intensivo / Grupos internacionales</option>
+                <option value="contratacion">Contratación de espectáculos (Compañía)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" rows="4" class="form-control" placeholder="Cuéntanos tu nivel de baile, disponibilidad horaria o detalles del evento..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <span class="brand-name" style="font-size: 1.4rem;">TATIANA GARRIDO</span>
+          <p style="margin-top: 0.5rem; max-width: 360px;">
+            Escuela y Compañía de Flamenco en Granada. Arte, docencia y tradición andaluza con proyección internacional.
+          </p>
+        </div>
+
+        <div>
+          <strong style="color: var(--text-light); display: block; margin-bottom: 0.5rem;">Enlaces</strong>
+          <ul style="list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            <li><a href="#legado">Biografía</a></li>
+            <li><a href="#escuela">Escuela</a></li>
+            <li><a href="#compania">Compañía</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="https://twitter.com/TATIANAGARRIDO9" target="_blank" rel="noopener">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tatiana Garrido &bull; Neptuno Show Management S.L. Todos los derechos reservados.</span>
+        <span>C/ Santa Clotilde 14 Bajo, 18003 Granada</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Navbar con fondo sólido al hacer scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // 2. Menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // 3. Filtro de cursos de la Escuela
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        courseCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 4. Pestañas de Espectáculos de la Compañía
+    const showTabs = document.querySelectorAll('.show-tab');
+    const showPanels = document.querySelectorAll('.show-panel');
+
+    showTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        showTabs.forEach(t => t.classList.remove('active'));
+        showPanels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(`show-${tab.dataset.show}`).classList.add('active');
+      });
+    });
+
+    // 5. Formulario de contacto interactivo
+    const contactForm = document.getElementById('contactForm');
+    const formFeedback = document.getElementById('formFeedback');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const motivo = document.getElementById('motivo').options[document.getElementById('motivo').selectedIndex].text;
+
+      formFeedback.className = 'form-feedback success';
+      formFeedback.textContent = `¡Gracias, ${nombre}! Hemos registrado tu consulta sobre "${motivo}". El equipo de Tatiana Garrido se pondrá en contacto contigo muy pronto.`;
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
